@@ -27,6 +27,6 @@ if (is.null(opt$lncRNA)){
 
 arqSeqMRNA <- file_path_as_absolute(opt$mRNA)
 arqSeqLNCRNA <- file_path_as_absolute(opt$lncRNA)
-print("mRNA file=" + arqSeqMRNA)
-print("lncRNA file=" + arqSeqLNCRNA)
+print(paste("  mRNA file=", arqSeqMRNA))
+print(paste("lncRNA file=", arqSeqLNCRNA))
 classification(mRNA=arqSeqMRNA,lncRNA=arqSeqLNCRNA)
