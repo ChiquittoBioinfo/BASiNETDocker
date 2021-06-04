@@ -1,0 +1,17 @@
+# TO BUILD AND RUN
+# docker build -t chiquitto/basinet:v1 .
+# docker run -it -v "$(pwd):/app" chiquitto/basinet:v15 R
+# docker run -it -v "$(pwd):/app" -v "$HOME:/host" chiquitto/basinet:v15 ls -la
+# docker run -it -v "$(pwd):/app" -v "$HOME:/host" chiquitto/basinet:v15 Rscript /app/BASiNET.R -i /host/gencode-files/gencode.v21.lncRNA_transcripts.fa
+# docker run -it -v "$(pwd):/app" -v "$HOME:/host" chiquitto/basinet:v15 Rscript /app/BASiNET.R --mRNA=app/empty.fasta --lncRNA=app/empty.fasta
+
+# TO RUN
+# docker run -ti --rm -u $(id -u) -v "$(pwd):/app" antoniopcamargo/rnasamba classify -p predicted_proteins.fa classification.tsv input.fa full_length_weights.hdf5
+# docker run -d -p 80:80 --name meu-site -e API_URL=http://api.meusite.com.br/api/ -v $PWD/site/arquivos:/Arquivos/ mahenrique94/meu-site
+
+library(BASiNET)
+# arqSeqMRNA <- system.file("extdata", "app/empty.fasta", package = "BASiNET")
+# arqSeqLNCRNA <- system.file("extdata", "app/empty.fasta", package = "BASiNET")
+classification(mRNA="app/empty.fasta",lncRNA="app/empty.fasta")
+
+print(system.file("extdata", "./empty.fasta", package = "BASiNET"))
