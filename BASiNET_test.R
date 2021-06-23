@@ -32,4 +32,4 @@ print(paste("  mRNA file=", arqSeqMRNA))
 print(paste("lncRNA file=", arqSeqLNCRNA))
 classification(arqSeqMRNA, arqSeqLNCRNA, load=opt$loadParam)
 
-print(paste("Input data were classified using the input model ", opt$loadParam))
+# print(paste("Input data were classified using the input model ", opt$loadParam))
